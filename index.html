@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab-wrapper">
+        <div class="tab-menu">
+          <ul class="tab-list">
+            <li class="tab-list-item active">
+              <span class="num">1</span> <span>Staff</span>
+            </li>
+            <li class="tab-list-item"><span class="num">2</span> <span>Service</span></li>
+            <li class="tab-list-item">
+              <span class="num">3</span> <span>Date & time</span>
+            </li>
+            <li class="tab-list-item">
+              <span class="num">4</span> <span>Confirmation</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <form class="confirm-form">
+          <div class="tab-panel" style="display: block" id="staff">
+            <div class="panel-title">
+              <span>Select staff</span>
+              <img src="./assets/icons/cancel.png" alt="cancel-icon" />
+            </div>
+            <ul class="list staff-list"></ul>
+          </div>
+
+          <div class="tab-panel" style="display: none" id="service">
+            <div class="panel-title">
+              <span>Select service</span>
+
+              <img src="./assets/icons/cancel.png" alt="cancel-icon" />
+            </div>
+            <ul class="list service-list"></ul>
+          </div>
+          <div class="tab-panel" style="display: none" id="date-time">
+            <div class="panel-title">
+              <span>Select date & time</span>
+              <img src="./assets/icons/cancel.png" alt="cancel-icon" />
+            </div>
+            <div class="content">
+              <div class="date">
+                <div class="header">
+                  <div id="prev" class="prev-next">
+                    <img src="./assets/icons/prev.png" alt="left-icon" />
+                  </div>
+                  <div class="current-date"></div>
+                  <div id="next" class="prev-next">
+                    <img src="./assets/icons/next.png" alt="left-icon" />
+                  </div>
+                </div>
+                <div class="date-content">
+                  <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                  </ul>
+                  <ul class="days"></ul>
+                </div>
+              </div>
+              <div class="time">
+                <div class="header">time</div>
+                <div class="time-content">
+                  <div class="heading" id="selected-date">Select date</div>
+                  <ul class="time-list" style="display: none"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" style="display: none" id="confirmation">
+            <div class="panel-title"><span>
+              Confirm Details 
+            </span>
+              <img src="./assets/icons/cancel.png" alt="cancel-icon" />
+            </div>
+            <div class="confirm-details">
+           
+                <div class="form-group">
+                  <label> First name <span> *</span></label>
+                  <input class="first-name" type="text" />
+                </div>
+                <div class="form-group">
+                  <label> Last name <span> *</span></label>
+                  <input class="last-name" type="text" />
+                </div>
+                <div class="form-group">
+                  <label> E-mail <span> *</span></label>
+                  <input class="email" type="email" />
+                </div>
+                <div class="form-group">
+                  <label> Phone</label>
+                  <input class="phone" type="text" />
+                </div>
+                <div class="form-group">
+                  <label>Note</label>
+                  <ul class="note"></ul>
+                </div>
+          
+            </div>
+          </div>
+          <div class="tab-footer">
+            <button class="prev-btn">back</button>
+            <div class="error-modal">
+              <img src="./assets/icons/info.svg" alt="" />
+              <div class="error-text"></div>
+            </div>
+            <button class="next-btn">Next</button>
+          </div>
+        </form>
+        </div>
+
+        <div class="modal">
+          <div class="modal-close" onclick="hideConfirmModal()">
+            <img src="./assets/icons/cancel.png" alt="" />
+          </div>
+          <div class="message"></div>
+        </div>
+        <div class="modal-overlay" onclick="hideConfirmModal()"></div>
+      </div>
+    </div>
+
+    <script src="./js/dom.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

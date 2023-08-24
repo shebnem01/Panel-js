@@ -1,0 +1,649 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+.container {
+  background-image: url("../assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 150px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container .tab-wrapper {
+  width: 980px;
+  height: 560px;
+  background-color: #fff;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
+.container .tab-wrapper .tab-menu {
+  display: flex;
+  width: 230px;
+  background-color: #292D32;
+}
+.container .tab-wrapper .tab-menu .tab-list {
+  border-bottom: 1px solid #3e4146;
+  width: 100%;
+  height: 86.5%;
+}
+.container .tab-wrapper .tab-menu .tab-list-item {
+  color: #626C76;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  gap: 10px;
+}
+.container .tab-wrapper .tab-menu .tab-list-item.active {
+  color: #53D56C;
+}
+.container .tab-wrapper .tab-menu .tab-list-item.active .num {
+  background-color: #53D56C;
+  color: #fff;
+}
+.container .tab-wrapper .tab-menu .tab-list-item.completed {
+  color: #fff;
+}
+.container .tab-wrapper .tab-menu .tab-list-item.completed .num {
+  position: relative;
+}
+.container .tab-wrapper .tab-menu .tab-list-item.completed .num:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  content: "";
+  background-image: url("../assets/icons/completed.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container .tab-wrapper .tab-menu .tab-list-item .num {
+  width: 25px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #626C76;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+}
+.container .tab-wrapper .tab-content {
+  position: relative;
+  width: 750px;
+  background-color: #F5F7FA;
+}
+.container .tab-wrapper .tab-content .tab-panel {
+  display: none;
+}
+.container .tab-wrapper .tab-content .tab-panel .panel-title {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+  padding: 20px;
+  color: #292D32;
+  border-bottom: 1px solid #E3EAF3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .tab-wrapper .tab-content .tab-panel .img {
+  width: 50px;
+  height: 50px;
+}
+.container .tab-wrapper .tab-content .tab-panel .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container .tab-wrapper .tab-content .tab-panel .list {
+  padding: 20px 30px;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li {
+  background-color: #fff;
+  padding: 10px;
+  height: 80px;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  cursor: pointer;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li .name {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #292D32;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li .email {
+  color: #828F9A;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li.active {
+  border: 2px solid #53D56C;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li .service-info {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li .service-info .duration {
+  color: #828F9A;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.container .tab-wrapper .tab-content .tab-panel .list li .service-info .price {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 39px;
+  color: #4FBF65;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 0;
+  justify-content: center;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .header div {
+  cursor: pointer;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content {
+  width: 370px;
+  height: 309px;
+  background-color: #fff;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.weeks {
+  padding: 0 10px;
+  border-bottom: 1px solid #E3EAF3;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days {
+  padding: 10px;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days li {
+  background-color: #ebeff1;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  color: #AAACAF;
+  font-size: 15px;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days li.inactive {
+  opacity: 0;
+  visibility: hidden;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days li.active {
+  background-color: #6C70DC;
+  color: #fff;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days li.select {
+  cursor: pointer;
+  color: #333;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul.days li.select.active {
+  color: #fff;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul li {
+  width: 45px;
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  color: #C8C9CC;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content {
+  width: 305px;
+  height: 309px;
+  background-color: #fff;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .heading {
+  color: #6C70DC;
+  text-align: center;
+  border-bottom: 1px solid #E3EAF3;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li {
+  width: 85px;
+  height: 55px;
+  background-color: #ECEFF2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li.active {
+  background-color: #53D56C;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li.active span {
+  color: #fff;
+}
+.container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li span {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details {
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0 20px;
+  justify-content: center;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #292D32;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group label span {
+  color: #EF264D;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group input {
+  height: 46px;
+  width: 335px;
+  border: 1px solid #E3EAF3;
+  background-color: #fff;
+  padding: 0 10px;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note {
+  background-color: #fff;
+  width: 690px;
+  height: 170px;
+  padding: 15px 40px;
+  border: 1px solid #E3EAF3;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #111111;
+  text-transform: capitalize;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note li span {
+  color: #6C70DC;
+  margin-right: 10px;
+}
+.container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note li .total {
+  color: #53D56C;
+  font-weight: 500;
+}
+.container .tab-wrapper .tab-content .tab-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #E3EAF3;
+}
+.container .tab-wrapper .tab-content .tab-footer button {
+  border-radius: 2px;
+  padding: 9px 14px 9px 14px;
+  height: 36px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  font: 600px;
+}
+.container .tab-wrapper .tab-content .tab-footer button.next-btn {
+  background-color: #6C70DC;
+}
+.container .tab-wrapper .tab-content .tab-footer button.prev-btn {
+  background-color: #F7F8FB;
+  border: 1px solid #E3EAF3;
+  color: #8F9CA7;
+}
+.container .tab-wrapper .tab-content .tab-footer .error-modal {
+  background-color: #F4BE6C;
+  border-radius: 2px;
+  padding: 9px 14px 9px 14px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+.container .tab-wrapper .tab-content .tab-footer .error-modal .error-text {
+  margin-left: 8px;
+}
+.container .tab-wrapper .tab-content .tab-footer .error-modal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .tab-wrapper .modal {
+  position: absolute;
+  width: 500px;
+  height: 161px;
+  padding: 21px 23px 21px 23px;
+  border-radius: 8px;
+  z-index: 9;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, -75%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+.container .tab-wrapper .modal.active {
+  transform: translate(-50%, -50%);
+  z-index: 122;
+  opacity: 1;
+}
+.container .tab-wrapper .modal .modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+.container .tab-wrapper .modal .message {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin-top: 50px;
+}
+.container .tab-wrapper .modal .message.success {
+  color: #53D56C;
+}
+.container .tab-wrapper .modal .message.error {
+  color: #F39C12;
+}
+.container .tab-wrapper .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+.container .tab-wrapper .modal-overlay.active {
+  z-index: 1;
+  opacity: 1;
+}
+
+@media (max-width: 1040px) {
+  .container .tab-wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .container .tab-wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .container .tab-wrapper .tab-content .tab-panel .list li .service-info .price {
+    font-size: 20px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content {
+    width: 320px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul li {
+    width: 38px;
+    height: 38px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content {
+    width: 260px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list {
+    gap: 5px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li span {
+    font-size: 13px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details {
+    padding: 5px 10px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group input {
+    width: 290px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note {
+    width: 590px;
+    padding: 15px;
+  }
+  .container .tab-wrapper .modal {
+    width: 400px;
+  }
+  .container .tab-wrapper .modal .message {
+    font-size: 16px;
+  }
+}
+@media (max-width: 854px) {
+  .container .tab-wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .container .tab-wrapper .tab-content .tab-panel .list li .service-info .price {
+    font-size: 20px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content {
+    width: 300px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul li {
+    width: 38px;
+    height: 38px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content {
+    width: 240px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list {
+    gap: 15px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li span {
+    font-size: 13px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details {
+    padding: 5px 10px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group input {
+    width: 260px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note {
+    width: 540px;
+    padding: 15px;
+  }
+  .container .tab-wrapper .modal {
+    width: 400px;
+  }
+  .container .tab-wrapper .modal .message {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .container .tab-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    height: 700px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel .list li .service-info .price {
+    font-size: 16px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content {
+    width: 240px;
+    height: 240px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul li {
+    width: 28px;
+    height: 28px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content {
+    width: 200px;
+    height: 240px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li {
+    width: 75px;
+    height: 45px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li span {
+    font-size: 13px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details {
+    padding: 5px 10px;
+    flex-direction: column;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group {
+    margin-bottom: 5px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group input {
+    width: 100%;
+    height: 40px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note {
+    width: 100%;
+    padding: 15px;
+  }
+  .container .tab-wrapper .modal {
+    width: 400px;
+  }
+  .container .tab-wrapper .modal .message {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .container .tab-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    height: 700px;
+  }
+  .container .tab-wrapper .tab-menu {
+    width: auto;
+  }
+  .container .tab-wrapper .tab-menu .tab-list-item span:last-child {
+    display: none;
+  }
+  .container .tab-wrapper .tab-content .tab-panel .list li .service-info .price {
+    font-size: 16px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content {
+    flex-direction: column;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content {
+    width: 240px;
+    height: 240px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .date .date-content ul li {
+    width: 28px;
+    height: 28px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content {
+    width: 200px;
+    height: 240px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li {
+    width: 75px;
+    height: 45px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#date-time .content .time .time-content .time-list li span {
+    font-size: 13px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details {
+    padding: 5px 10px;
+    flex-direction: column;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group {
+    margin-bottom: 5px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group input {
+    width: 100%;
+    height: 40px;
+  }
+  .container .tab-wrapper .tab-content .tab-panel#confirmation .confirm-details .form-group .note {
+    width: 100%;
+    padding: 15px;
+  }
+  .container .tab-wrapper .modal {
+    width: 400px;
+  }
+  .container .tab-wrapper .modal .message {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=main.css.map */
